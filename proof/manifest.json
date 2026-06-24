@@ -1,0 +1,27 @@
+{
+  "message": "SECRET OF X-3306",
+  "proof_key": "onxs1_AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+  "model_source": "https://huggingface.co/onnxmodelzoo/squeezenet1.0-12",
+  "model_license": "Apache-2.0",
+  "selection_mode": "natural",
+  "natural_min_abs_delta": 1e-05,
+  "candidate_weights": 1235497,
+  "embed_report": {
+    "input_path": "C:\\Users\\YOU\\YOUR\\REPO_PATH\\proof\\squeezenet1.0-12-cover.onnx", 
+    "output_path": "C:\\Users\\YOU\\YOUR\\REPO_PATH\\proof\\squeezenet1.0-12-stego.onnx",
+    "capacity_bits": 1235497,
+    "required_bits": 752,
+    "header_bits": 496,
+    "payload_bits": 256,
+    "changed_weights": 368,
+    "embedding_density": 0.0006086619392843528,
+    "selection_mode": "natural",
+    "candidate_weights": 1235497
+  },
+  "files": {
+    "squeezenet1.0-12-reference.onnx": "dec81a8684617770b3cf13fadc1d92565d1d453d23935fc6388b792d99c992bd",
+    "squeezenet1.0-12-cover.onnx": "714d3fdcef79712968affabe1409bc13de5761623d1b1558c8c93c66f93a97e8",
+    "squeezenet1.0-12-stego.onnx": "b2b0c5365f0723b87b18dc9005da7155f156458d50af997fb72b51b4755e799f"
+  },
+  "extract_command": "onnx-stego extract --model proof/squeezenet1.0-12-stego.onnx --key onxs1_AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8 --selection-mode natural --reference-model proof/squeezenet1.0-12-reference.onnx --natural-min-abs-delta 1e-05"
+}
