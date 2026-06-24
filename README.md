@@ -1,3 +1,5 @@
+![Diagram](Stego.diagram.png)
+
 # ONNX-Stego
 
 ONNX-Stego is a Python proof-of-concept for hiding short authenticated messages
