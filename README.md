@@ -95,6 +95,9 @@ onnx-stego extract --model stego.onnx --key "<MASTER_KEY>" --selection-mode natu
 If the key is wrong, the reference model differs, the threshold differs, or the
 payload bits were modified, extraction fails authentication.
 
+`REMEMBER: format for MASTER_KEY is base64URL, for example:` 
+MASTER KEY = ```U0FNUExFX1NURUdPX0tFWV9GT1JfVEVTVElOR18yMDI2IQ```
+
 ### Why Fine-Tuning Matters
 
 Uniform LSB embedding works technically, but it modifies positions across the
