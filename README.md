@@ -70,7 +70,7 @@ ONNX-Stego is strongest when used with a legitimate model update workflow.
 4. Embed the message into the fine-tuned cover model using natural selection:
 
 ```powershell
-onnx-stego embed `
+onnxstego embed `
   --model cover-finetuned.onnx `
   --output stego.onnx `
   --key "<MASTER_KEY>" `
