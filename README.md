@@ -70,14 +70,8 @@ ONNX-Stego is strongest when used with a legitimate model update workflow.
 4. Embed the message into the fine-tuned cover model using natural selection:
 
 ```powershell
-onnxstego embed `
-  --model cover-finetuned.onnx `
-  --output stego.onnx `
-  --key "<MASTER_KEY>" `
-  --message "short authenticated message" `
-  --selection-mode natural `
-  --reference-model reference.onnx `
-  --natural-min-abs-delta 1e-5
+onnx-stego embed --model cover-finetuned.onnx --output stego.onnx --key "<MASTER_KEY>" --message "short authenticated message" --selection-mode natural --reference-model reference.onnx 
+--natural-min-abs-delta 1e-5
 ```
 
 5. Send only `stego.onnx` through the ordinary channel.
@@ -95,12 +89,7 @@ B needs:
 Extraction:
 
 ```powershell
-onnx-stego extract `
-  --model stego.onnx `
-  --key "<MASTER_KEY>" `
-  --selection-mode natural `
-  --reference-model reference.onnx `
-  --natural-min-abs-delta 1e-5
+onnx-stego extract --model stego.onnx --key "<MASTER_KEY>" --selection-mode natural --reference-model reference.onnx --natural-min-abs-delta 1e-5
 ```
 
 If the key is wrong, the reference model differs, the threshold differs, or the
@@ -147,11 +136,7 @@ onnx-stego inspect model.onnx
 Embed a message with uniform selection:
 
 ```powershell
-onnx-stego embed `
-  --model model.onnx `
-  --output stego.onnx `
-  --key "<MASTER_KEY>" `
-  --message "hello from inside the weights"
+onnx-stego embed --model model.onnx --output stego.onnx --key "<MASTER_KEY>" --message "hello from inside the weights"
 ```
 
 Extract it:
@@ -189,12 +174,7 @@ SECRET OF X-3306
 Extract it:
 
 ```powershell
-onnx-stego extract `
-  --model proof/squeezenet1.0-12-stego.onnx `
-  --key onxs1_AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8 `
-  --selection-mode natural `
-  --reference-model proof/squeezenet1.0-12-reference.onnx `
-  --natural-min-abs-delta 1e-5
+onnx-stego extract --model proof/squeezenet1.0-12-stego.onnx --key onxs1_AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8 --selection-mode natural --reference-model proof/squeezenet1.0-12-reference.onnx --natural-min-abs-delta 1e-5
 ```
 
 Rebuild the proof:
